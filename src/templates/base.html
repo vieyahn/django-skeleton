@@ -1,0 +1,43 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+
+<html class="no-js">
+
+    <head>
+        <meta charset="utf-8">
+        <title>{% block title %}{% endblock title %}</title>
+        
+        <script type="text/html" id="home-template">
+            <b>Hello, World!</b>
+        </script>
+    </head>
+
+    <body>
+
+        <div id="content"></div>
+
+        <script src="{% static "jquery/dist/jquery.min.js" %}"></script>
+        <script src="{% static "underscore/underscore-min.js" %}"></script>
+        <script src="{% static "backbone/backbone-min.js" %}"></script>
+
+        <script id="config" type="text/json">
+            {
+                "models": {},
+                "collections": {},
+                "views": {},
+                "router": null
+            }
+        </script>
+
+        <script src="{% static "js/app.js" %}"></script>
+
+        <!-- Backbone place -->
+        <script src="{% static "js/models.js" %}"></script>
+        <script src="{% static "js/views.js" %}"></script>
+        <script src="{% static "js/router.js" %}"></script>
+        <!-- End backbone -->
+
+
+    </body>
+</html>
