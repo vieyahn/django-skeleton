@@ -18,4 +18,7 @@ git add .
 git commit -m 'first commit'
 git push heroku master
 
+# Migrations
+heroku run python src/manage.py migrate
+
 ```
