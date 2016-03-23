@@ -1,6 +1,6 @@
 from django.conf.urls import url, include
 from django.contrib import admin
-from django.contrib.staticfiles import views
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 
 urlpatterns = [
@@ -8,8 +8,4 @@ urlpatterns = [
     url(r'', include('apps.core.urls', namespace='core')),
 ]
 
-if settings.DEBUG:
-    urlpatterns += [
-        url(r'^static/(?P<path>.*)$', views.serve),
-    ]
-
+urlpatterns += staticfiles_urlpatterns()
