@@ -1,11 +1,8 @@
 import os
-from os.path import abspath, dirname
+from os.path import abspath, dirname, realpath
 from sys import path
 
-SITE_ROOT = dirname(dirname(abspath(__file__)))
-path.append(SITE_ROOT)
-
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "src.conf")
+path.insert(1, dirname(realpath(__file__)))
 
 from django.core.wsgi import get_wsgi_application
 application = get_wsgi_application()
