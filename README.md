@@ -34,5 +34,5 @@ docker build -t projectname .
 Run project
 
 ```
-docker run -it -p 8000:8000 --name my-running-app projectname
+docker run -it --rm -p 8000:8000 --name my-running-app projectname
 ```
