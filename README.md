@@ -1,7 +1,7 @@
 # Installation
 
 ```
-django-admin startproject projectname --template=https://github.com/aliev/django-skeleton/archive/master.zip
+git clone https://github.com/aliev/django-skeleton.git projectname
 cd projectname
 virtualenv .env
 source .env/bin/activate
