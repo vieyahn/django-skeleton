@@ -22,3 +22,17 @@ git push heroku master
 heroku run python src/manage.py migrate
 
 ```
+
+# Using docker
+
+Build
+
+```
+docker build -t projectname .
+```
+
+Run project
+
+```
+docker run -it -p 8000:8000 --name my-running-app projectname
+```
