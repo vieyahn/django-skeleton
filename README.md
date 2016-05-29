@@ -1,11 +1,27 @@
 # Installation
 
 ```
+# Base project installation
+
 git clone https://github.com/aliev/django-skeleton.git projectname
 cd projectname
 virtualenv .env
 source .env/bin/activate
 pip install -r requirements.txt
+
+# Install nodejs and bower through npm
+
+sudo npm install -g bower
+
+# Run migrations
+
+python src/manage.py makemigrations core
+python src/manage.py migrate
+
+# Install bower components
+
+python src/manage.py bower install
+
 ```
 
 # Heroku deployment
