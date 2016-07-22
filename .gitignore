@@ -2,6 +2,7 @@
 assets
 media
 .env
+node_modules
 
 # Ignore files
 *.py[co]

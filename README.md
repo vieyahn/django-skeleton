@@ -22,6 +22,11 @@ python src/manage.py migrate
 
 python src/manage.py bower install
 
+# Start with react
+
+npm install
+npm run build
+
 ```
 
 # Heroku deployment
