@@ -1,14 +1,20 @@
-# Ignore folders
+# Ignore media and static
 assets
 media
-.env
-node_modules
 
-# Ignore files
+# Ignore python environment
+.env
+
+# Ignore temporary files
 *.py[co]
 *.db
 *.log
 .DS_Store
 ._*
 
+# Ignore local settings
 src/conf/local.py
+
+# Ignore react js bundles
+node_modules
+src/static/bundle
