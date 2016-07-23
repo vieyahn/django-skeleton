@@ -125,21 +125,8 @@ STATICFILES_DIRS = (
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-    'djangobower.finders.BowerFinder',
 )
 # END STATIC FILE CONFIGURATION
-
-# DJANGO BOWER OPTIONS
-BOWER_INSTALLED_APPS = [
-    'bootstrap',
-    'font-awesome',
-    'jquery',
-    'bootstrap-daterangepicker',
-]
-
-BOWER_COMPONENTS_ROOT = os.path.join(ROOT_DIR, 'components')
-BOWER_PATH = '/usr/local/bin/bower'
-# END DJANGO BOWER OPTIONS
 
 # MEDIA CONFIGURATION
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#media-root
