@@ -24,8 +24,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
     'debug_toolbar',
     'apps.core',
+    'webpack_loader',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -37,6 +39,7 @@ MIDDLEWARE_CLASSES = [
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware'
 ]
 
 ROOT_URLCONF = 'urls'
@@ -116,10 +119,18 @@ STATIC_URL = '/static/'
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#static-root
 STATIC_ROOT = os.path.join(ROOT_DIR, 'assets')
 
+# MEDIA CONFIGURATION
+# See: https://docs.djangoproject.com/en/dev/ref/settings/#media-root
+MEDIA_ROOT = os.path.normpath(os.path.join(ROOT_DIR, 'media'))
+
+# See: https://docs.djangoproject.com/en/dev/ref/settings/#media-url
+MEDIA_URL = '/media/'
+# END MEDIA CONFIGURATION
+
 # See:
 # https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#std:setting-STATICFILES_DIRS
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, 'frontend'),
 )
 
 STATICFILES_FINDERS = (
@@ -128,13 +139,12 @@ STATICFILES_FINDERS = (
 )
 # END STATIC FILE CONFIGURATION
 
-# MEDIA CONFIGURATION
-# See: https://docs.djangoproject.com/en/dev/ref/settings/#media-root
-MEDIA_ROOT = os.path.normpath(os.path.join(ROOT_DIR, 'media'))
-
-# See: https://docs.djangoproject.com/en/dev/ref/settings/#media-url
-MEDIA_URL = '/media/'
-# END MEDIA CONFIGURATION
+WEBPACK_LOADER = {
+    'DEFAULT': {
+        'BUNDLE_DIR_NAME': 'bundles/',
+        'STATS_FILE': os.path.join(BASE_DIR, 'webpack-stats.json'),
+    }
+}
 
 LOGGING = {
     'version': 1,

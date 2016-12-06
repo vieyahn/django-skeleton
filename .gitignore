@@ -18,3 +18,4 @@ src/conf/local.py
 # Ignore react js bundles
 node_modules
 src/static/bundle
+src/webpack-stats.json
