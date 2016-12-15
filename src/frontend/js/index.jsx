@@ -1,10 +1,9 @@
-import './csrf.js'
 import React from 'react'
 import {render} from 'react-dom'
 import { Router, Route, Link, browserHistory } from 'react-router'
 import BaseComponent from './components/BaseComponent.jsx'
 import AboutComponent from './components/AboutComponent.jsx'
-
+import './csrf.jsx'
 
 render((
   <Router history={browserHistory}>
