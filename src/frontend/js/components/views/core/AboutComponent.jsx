@@ -1,5 +1,4 @@
 import React from 'react'
-import 'whatwg-fetch'
 
 
 class AboutComponent extends React.Component {
@@ -9,12 +8,17 @@ class AboutComponent extends React.Component {
       hello: "Initial data"
     }
   }
-  componentDidMount() {
+  componentWillMount() {
     $.get(this.props.location.pathname, (data) => {
       this.setState(data);
     });
   }
+
+  componentDidMount() {
+  }
+
   render() {
+    console.log(this.api);
     return <h2>Name {this.state.hello}</h2>
   }
 }
